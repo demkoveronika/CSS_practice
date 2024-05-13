@@ -1,1 +1,110 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 30px 40px;
+    justify-content: center;
+
+    @media (min-width: 500px) {
+        grid-template-columns: repeat(2, 200px);
+        left: 35px;
+        right: 35px;
+    }
+
+    @media (min-width: 750px) {
+        grid-template-columns: repeat(2, 200px);
+        left: 160px;
+        right: 160px;
+    }
+
+    @media (min-width: 1000px) {
+        grid-template-columns: repeat(4, 200px);
+        left: 55px;
+        right: 55px;
+    }
+
+    @media (min-width: 1500px) {
+        grid-template-columns: repeat(4, 200px);
+        left: 305px;
+        right: 305px;
+    }
+
+    &__person {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        top: 30px;
+        padding: 0;
+        transition: transform 1s ease;
+
+        &:hover {
+            transition: 1s;
+            background-color: #EEEEEE;
+            width: 220px;
+            height: auto;
+            transform: scale(1.2);
+        }
+
+        &:hover .person__photo {
+            width: 220px;
+            height: 220px;
+            border-radius: 60px;
+        }
+
+        &--extra {
+            font-size: 18px;
+            color: #000;
+            margin-top: 10px;
+            margin-bottom: 19px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        &:hover .people__person--extra {
+            opacity: 1;
+        }
+    }
+
+    &__person--photo {
+        position: relative;
+        display: inline-block;
+    }
+}
+
+.person__photo {
+    display: block;
+    border-radius: 200px;
+    background-position: center;
+    width: 200px;
+    height: 200px;
+}
+
+.person__rank {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 18.4px;
+    text-align: center;
+    color: #8B0000;
+    padding-top: 7;
+    padding-bottom: 7;
+}
+
+.person__name {
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #2F4F4F;
+    white-space: nowrap;
+}
 
